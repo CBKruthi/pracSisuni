@@ -1,5 +1,4 @@
 import React from "react";
-import "./Culture.css";
 import teamImg from "../assets/team.webp";   
 import growthImg from "../assets/growth.png";
 import workImg from "../assets/workspace.png";
@@ -7,14 +6,15 @@ import eventsImg from "../assets/events.png";
 
 const Culture = () => {
   return (
-    <div className="culture-page-container">
+    <div className="font-poppins text-gray-800 leading-relaxed">
       {/* Hero Section */}
-      <section className="culture-hero-section">
+      <section className="mt-14 text-gray-900 text-center py-10 relative overflow-hidden">
+        <div className="absolute w-[400px] h-[400px] rounded-full -top-36 -left-24 blur-[120px]"></div>
         <div className="culture-hero-content">
-          <h1 className="culture-hero-title animate-fade">
+          <h1 className="text-5xl font-bold animate-fade-in">
             Our Culture at Sisuni Technologies
           </h1>
-          <p className="culture-hero-subtitle animate-slide">
+          <p className="text-xl mt-4 text-gray-900 animate-slide-in">
             Innovation, collaboration, and integrity — empowering our team to
             create and thrive.
           </p>
@@ -22,9 +22,9 @@ const Culture = () => {
       </section>
 
       {/* Our Values */}
-      <section className="culture-values-section">
-        <h2 className="culture-section-title animate-fade">Our Core Values</h2>
-        <div className="culture-values-grid">
+      <section className="py-20 px-[8%] bg-gray-100 text-center">
+        <h2 className="text-3xl font-bold text-dark-blue mb-4 animate-fade-in">Our Core Values</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 mt-8">
           {[
             {
               title: "Innovation",
@@ -47,9 +47,9 @@ const Culture = () => {
               desc: "Prioritizing continuous learning and development.",
             },
           ].map(({ title, desc }) => (
-            <div key={title} className="culture-value-card animate-up">
-              <h3 className="culture-value-title">{title}</h3>
-              <p className="culture-value-desc">{desc}</p>
+            <div key={title} className="bg-white rounded-2xl p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2 animate-fade-up">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+              <p className="text-gray-600">{desc}</p>
             </div>
           ))}
         </div>
@@ -57,46 +57,45 @@ const Culture = () => {
 
       {/* Work Environment */}
       <section className="culture-work-section">
-        <div className="culture-split">
-          <div className="culture-text animate-slide">
-            <h2 className="culture-section-title">Work Environment</h2>
-            <p className="culture-section-text">
+        <div className="flex items-center gap-12 py-20 px-[8%] flex-wrap">
+          <div className="flex-1 animate-slide-in">
+            <h2 className="text-3xl font-bold text-dark-blue mb-4">Work Environment</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
               Our office is designed to foster creativity and productivity. Open
               spaces, collaboration zones, and quiet areas give our team the
               freedom to work in the best way for them.
             </p>
           </div>
-          <img src={workImg} alt="workspace" className="culture-image animate-fade" />
+          <img src={workImg} alt="workspace" className="w-[450px] max-w-full rounded-2xl shadow-xl animate-fade-in" />
         </div>
       </section>
 
       {/* Team & Collaboration */}
       <section className="culture-work-section">
-        <div className="culture-split">
-           <img src={teamImg} alt="Team" className="culture-image animate-fade" />
-          <div className="culture-text animate-slide">
-            <h2 className="culture-section-title">Team & Collaboration</h2>
-            <p className="culture-section-text">
+        <div className="flex items-center gap-12 py-20 px-[8%] flex-wrap">
+           <img src={teamImg} alt="Team" className="w-[450px] max-w-full rounded-2xl shadow-xl animate-fade-in" />
+          <div className="flex-1 animate-slide-in">
+            <h2 className="text-3xl font-bold text-dark-blue mb-4">Team & Collaboration</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
               We believe in the power of diverse teams. Our people-first approach
           ensures every voice is heard and valued. Regular team meetings and
           cross-functional projects keep collaboration strong.
             </p>
           </div>
-         
         </div>
       </section>
       
       {/* Employee Growth */}
       <section className="culture-growth-section">
-        <div className="culture-split reverse">
+        <div className="flex items-center gap-12 py-20 px-[8%] flex-wrap flex-row-reverse">
           <img
             src={growthImg}
             alt="Employee Growth"
-            className="culture-image animate-fade"
+            className="w-[450px] max-w-full rounded-2xl shadow-xl animate-fade-in"
           />
-          <div className="culture-text animate-slide">
-            <h2 className="culture-section-title">Employee Growth & Learning</h2>
-            <p className="culture-section-text">
+          <div className="flex-1 animate-slide-in">
+            <h2 className="text-3xl font-bold text-dark-blue mb-4">Employee Growth & Learning</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
               From workshops and mentorship programs to certifications and
               conferences, we invest in your professional development at every
               stage of your career.
@@ -106,11 +105,11 @@ const Culture = () => {
       </section>
 
       {/* Events & Activities */}
-      <section className="culture-events-section">
-        <h2 className="culture-section-title">Events & Activities</h2>
-        <div className="culture-events-box animate-up">
-          <img src={eventsImg} alt="Events" className="culture-events-img" />
-          <p className="culture-section-text">
+      <section className="py-20 px-[8%] text-center">
+        <h2 className="text-3xl font-bold text-dark-blue mb-4">Events & Activities</h2>
+        <div className="mt-8 animate-fade-up">
+          <img src={eventsImg} alt="Events" className="w-full max-w-[700px] rounded-2xl mb-6 shadow-lg mx-auto" />
+          <p className="text-lg text-gray-600 leading-relaxed">
             Team lunches, hackathons, wellness days, and community service — we
             balance hard work with fun and engagement.
           </p>
@@ -118,17 +117,17 @@ const Culture = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="culture-cta-section">
-        <h2 className="culture-cta-title animate-fade">Join Our Team</h2>
-        <p className="culture-cta-text animate-up">
+      <section className="text-black text-center py-0">
+        <h2 className="text-4xl font-bold mb-4 animate-fade-in">Join Our Team</h2>
+        <p className="text-lg animate-fade-up">
           Interested in being part of a thriving culture? Check out our{" "}
-          <a href="/careers" className="culture-cta-link">
+          <a href="/careers" className="text-cyan-400 font-semibold no-underline hover:underline">
             Careers Page
           </a>{" "}
           or contact us at{" "}
           <a
             href="mailto:careers@sisunitech.com"
-            className="culture-cta-link"
+            className="text-cyan-400 font-semibold no-underline hover:underline"
           >
             careers@sisunitech.com
           </a>
@@ -136,6 +135,6 @@ const Culture = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Culture;
+export default About;

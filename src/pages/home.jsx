@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
 import Globe from "../component/Globe";
 
 // Import section images
@@ -30,7 +29,6 @@ import {
 } from "lucide-react";
 
 const sections = [
-  
   {
     tag: "TRANSFORMING IDEAS INTO POWERFUL WEB SOLUTIONS",
     title: ["From vision", "to apps that amaze"],
@@ -91,72 +89,101 @@ const Home = () => {
   return (
     <section>
       {/* Hero Section */}
-      <div className="home-hero">
-        <div className="hero-text">
-          <h1 style={{marginLeft: "1%"}}>
+      <div className="flex items-center justify-between px-[8%] py-24 bg-gradient-to-br from-[#020024] via-gray-900 to-gray-900 text-white min-h-screen relative z-0 overflow-hidden">
+        <div className="max-w-[600px] ml-5 z-10">
+          <h1 className="text-6xl leading-tight font-bold mr-20 bg-gradient-to-r from-hero-blue to-hero-green bg-clip-text text-transparent mb-4 ml-[1%]">
             Invest in Dreams,<br />
             Harvest Success
           </h1>
-          <p style={{marginLeft: "1.5%"}}>Fuel the future by backing bold ideas today.</p>
+          <p className="text-xl text-light-blue ml-6 mb-16 leading-relaxed ml-[1.5%]">Fuel the future by backing bold ideas today.</p>
         </div>
-        <div className="hero-animation"><Globe /></div>
+        <div className="w-[550px] h-[500px] flex-shrink-0 relative z-10 flex justify-center items-center">
+          <div className="absolute w-[400px] h-[400px] bg-hero-blue bg-opacity-40 rounded-full -top-12 -left-24 blur-[120px] -z-10"></div>
+          <div className="absolute w-[300px] h-[300px] bg-hero-green bg-opacity-30 rounded-full -bottom-12 -right-12 blur-[120px] -z-10"></div>
+          <Globe />
+        </div>
       </div>
      
-     <section class="intro-section">
-  <div class="intro-content">
-    <h1>
-      <span class="highlight">W</span>e work to turn ideas into reality —
-      <br />
-      delivering <span class="gradient">innovative services</span>
-    </h1>
-  </div>
-</section>
+      {/* Intro Section */}
+      <section className="flex items-center justify-center min-h-[80vh] mt-[48rem] bg-gradient-to-br from-gray-50 to-blue-100 text-center">
+        <div className="intro-content">
+          <h1 className="font-poppins text-4xl font-bold text-gray-800 leading-relaxed max-w-4xl mx-auto relative animate-fade-up">
+            <span className="text-5xl text-blue-600 font-extrabold animate-bounce-custom inline-block">W</span>e work to turn ideas into reality —
+            <br />
+            delivering <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-green-400 bg-clip-text text-transparent font-extrabold">innovative services</span>
+          </h1>
+        </div>
+      </section>
 
       {/* Sections */}
       {sections.map((section, index) => (
-        <div className="home" key={index}>
-          <div className="home-left">
-            <span className="tag">{section.tag}</span>
-            <h1>
+        <div className="flex items-center justify-between px-[5%] py-16 bg-white gap-8 flex-wrap mb-16" key={index}>
+          <div className="flex-1 min-w-[280px]">
+            <span className="inline-block text-card-blue text-base font-bold mb-5 relative cursor-pointer group">
+              {section.tag}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-card-blue transition-all duration-300 group-hover:w-full"></span>
+            </span>
+            <h1 className="text-4xl font-bold leading-tight mb-5">
               {section.title.map((line, i) => (
-                <span key={i} className={i === 1 ? "highlight" : ""}>{line}<br/></span>
+                <span key={i} className={i === 1 ? "text-sky-400" : ""}>{line}<br/></span>
               ))}
             </h1>
-            <p className="description">{section.description}</p>
+            <p className="text-gray-600 leading-relaxed mb-8 max-w-[600px]">{section.description}</p>
 
-            <div className="features">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
               {section.features.map((feature, idx) => (
-                <div className={`feature-card ${feature.color}`} key={idx}>
-                  <div className="icon">{feature.icon}</div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
+                <div className="flex flex-col items-start p-4 rounded-xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg" key={idx}>
+                  <div className={`text-2xl mb-2 p-3 rounded-xl ${
+                    feature.color === 'blue' 
+                      ? 'bg-blue-50 text-card-blue' 
+                      : 'bg-orange-50 text-card-orange'
+                  }`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="mb-2 text-lg font-semibold">{feature.title}</h3>
+                  <p className="text-sm text-gray-600">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="home-right">
-            <img src={section.imgSrc} alt={section.imgAlt} />
+          <div className="flex-1 text-center min-w-[280px]">
+            <img 
+              src={section.imgSrc} 
+              alt={section.imgAlt} 
+              className="max-w-full h-auto rounded-xl shadow-lg transition-all duration-500 transform scale-105 hover:scale-100 hover:shadow-xl"
+            />
           </div>
         </div>
-
       ))}
 
       {/* Why Choose Us */}
-      <div className="why-choose">
-        <h2>Why Choose <span className="highlight">Sisuni Tech</span></h2>
-        <p className="why-subtitle">
+      <div className="py-20 px-[5%] text-center bg-blue-50 mb-12">
+        <h2 className="text-3xl font-bold mb-2">Why Choose <span className="text-sky-400">Sisuni Tech</span></h2>
+        <p className="text-sm text-gray-600 mb-12 max-w-[700px] mx-auto">
           We combine innovation, expertise, and dedication to deliver exceptional results
         </p>
 
-        <div className="why-cards">
-          <div className="why-card"><div className="icon"><UserCheck size={28} /></div><h3>Expert Team</h3><p>Skilled professionals with years of experience</p></div>
-          <div className="why-card"><div className="icon"><CheckCircle size={28} /></div><h3>Quality Assured</h3><p>Rigorous testing ensures reliable solutions</p></div>
-          <div className="why-card"><div className="icon"><Handshake size={28} /></div><h3>Client-Focused</h3><p>Dedicated support tailored to your needs</p></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="text-3xl mb-3"><UserCheck size={28} /></div>
+            <h3 className="text-lg mb-2 font-semibold">Expert Team</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">Skilled professionals with years of experience</p>
+          </div>
+          <div className="bg-white p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="text-3xl mb-3"><CheckCircle size={28} /></div>
+            <h3 className="text-lg mb-2 font-semibold">Quality Assured</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">Rigorous testing ensures reliable solutions</p>
+          </div>
+          <div className="bg-white p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="text-3xl mb-3"><Handshake size={28} /></div>
+            <h3 className="text-lg mb-2 font-semibold">Client-Focused</h3>
+            <p className="text-sm text-gray-600 leading-relaxed">Dedicated support tailored to your needs</p>
+          </div>
         </div>
       </div>
 
-      <Link to="/about" className="btn">Know More →</Link>
+      <Link to="/about" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">Know More →</Link>
     </section>
   );
 };
