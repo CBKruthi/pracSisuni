@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import Globe from "../component/Glode";
+import Globe from "../component/Globe";
 
 // Import section images
 import webImg from "../assets/web.jpg";

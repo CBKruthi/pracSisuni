@@ -50,7 +50,7 @@ function About() {
             <p>
               With over a century of combined expertise, our forward-thinking and diverse leadership
               team is shaping the future of digital innovation. United by vision and driven by
-              results, we’re pioneering new strategies to empower growth and transformation.
+              results, we're pioneering new strategies to empower growth and transformation.
             </p>
           </div>
           <div className="leadership-right">
@@ -85,7 +85,7 @@ function About() {
               <h3>Kuwait</h3>
               <p>
                 Strategically positioned in Kuwait, 
-                we’ve been driving import and export operations across the Gulf for over 5+ years.
+                we've been driving import and export operations across the Gulf for over 5+ years.
               </p>
               <a
                 href="https://www.google.com/maps/place/Kuwait+Towers"
